@@ -1,0 +1,74 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All expense subcategories
+    </h1>
+
+    <a href="/expense_subcategories/new" class="btn btn-block btn-outline-secondary">
+      Add a new expense subcategory
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @expense_subcategories.each do |expense_subcategory| %>
+      <tr>
+        <td>
+          <%= expense_subcategory.id %>
+        </td>
+
+        <td>
+          <%= expense_subcategory.name %>
+        </td>
+
+        <td>
+          <%= expense_subcategory.category_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(expense_subcategory.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(expense_subcategory.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/expense_subcategories/<%= expense_subcategory.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

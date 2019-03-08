@@ -1,0 +1,99 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      Work Orders
+    </h1>
+
+    <a href="/work_orders/new">
+      <i class="far fa-plus-square"></i>
+      Add a new work order
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          Work Order #
+        </th>
+
+        <th>
+          Assigned Employee
+        </th>
+
+        <th>
+          Date In
+        </th>
+
+        <th>
+          Due Date
+        </th>
+
+        <th>
+          Date Out
+        </th>
+        
+        <th>
+          Total Amount
+        </th>
+
+        <th>
+          Amount paid
+        </th>
+        <th>
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @work_orders.each do |work_order| %>
+      <tr>
+        <td>
+          <%= work_order.work_order_number %>
+        </td>
+
+        <td>
+          <%= work_order.employee_id %>
+        </td>
+
+        <td>
+          <%= work_order.date_in %>
+        </td>
+
+        <td>
+          <%= work_order.due_date %>
+        </td>
+
+        <td>
+          <%= work_order.date_out %>
+        </td>
+
+        <td>
+          <%= work_order.total_amount %>
+        </td>
+
+        <td>
+          <%= work_order.amount_paid %>
+        </td>
+
+        <td style="padding: 12px 0 12px 0;">
+          <a href="/work_orders/<%= work_order.id %>/edit">
+            <i class="fas fa-edit"></i>
+          </a>
+        </td>
+        <td style="padding: 12px 0 12px 0;">
+        <a href="/delete_work_order/<%= work_order.id %>">
+          <i class="far fa-trash-alt text-danger"></i>
+        </a>  
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

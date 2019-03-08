@@ -1,0 +1,34 @@
+<h1>
+  Edit expense subcategory #<%= @expense_subcategory.id %>
+</h1>
+
+<hr>
+
+<form action="/update_expense_subcategory/<%= @expense_subcategory.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @expense_subcategory.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @expense_subcategory.category_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update expense subcategory
+  </button>
+</form>
+
+<hr>
+
+<a href="/expense_subcategories">
+  Go back
+</a>

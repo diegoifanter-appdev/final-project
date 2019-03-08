@@ -1,0 +1,35 @@
+<h1>
+  Add a new expense subcategory
+</h1>
+
+
+<hr>
+
+<form action="/create_expense_subcategory" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <input type="text" id="category_id" name="category_id" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create expense subcategory
+  </button>
+</form>
+
+<hr>
+
+<a href="/expense_subcategories">
+  Go back
+</a>

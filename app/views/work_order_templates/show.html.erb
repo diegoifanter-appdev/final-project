@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Work order #<%= @work_order.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/work_orders" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/work_orders/<%= @work_order.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit work order
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_work_order/<%= @work_order.id %>" class="btn btn-block btn-outline-secondary">
+          Delete work order
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Employee
+      </dt>
+      <dd>
+        <%= @work_order.employee_id %>
+      </dd>
+
+      <dt>
+        Total amount
+      </dt>
+      <dd>
+        <%= @work_order.total_amount %>
+      </dd>
+
+      <dt>
+        Amount paid
+      </dt>
+      <dd>
+        <%= @work_order.amount_paid %>
+      </dd>
+
+      <dt>
+        Date in
+      </dt>
+      <dd>
+        <%= @work_order.date_in %>
+      </dd>
+
+      <dt>
+        Due date
+      </dt>
+      <dd>
+        <%= @work_order.due_date %>
+      </dd>
+
+      <dt>
+        Date out
+      </dt>
+      <dd>
+        <%= @work_order.date_out %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@work_order.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@work_order.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

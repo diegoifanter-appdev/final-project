@@ -1,0 +1,34 @@
+<% if @expense_category.errors.any? %>
+  <% @expense_category.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit expense category #<%= @expense_category.id %>
+</h1>
+
+<hr>
+
+<form action="/update_expense_category/<%= @expense_category.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @expense_category.name %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update expense category
+  </button>
+</form>
+
+<hr>
+
+<a href="/expense_categories">
+  Go back
+</a>

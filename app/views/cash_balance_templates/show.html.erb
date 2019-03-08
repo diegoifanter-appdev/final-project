@@ -1,0 +1,58 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Cash balance #<%= @cash_balance.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/cash_balances" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/cash_balances/<%= @cash_balance.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit cash balance
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_cash_balance/<%= @cash_balance.id %>" class="btn btn-block btn-outline-secondary">
+          Delete cash balance
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @cash_balance.date %>
+      </dd>
+
+      <dt>
+        Balance
+      </dt>
+      <dd>
+        <%= @cash_balance.balance %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@cash_balance.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@cash_balance.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

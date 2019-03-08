@@ -1,0 +1,50 @@
+<% if @invoice.errors.any? %>
+  <% @invoice.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit invoice #<%= @invoice.id %>
+</h1>
+
+<hr>
+
+<form action="/update_invoice/<%= @invoice.id %>" method="post">
+
+  <div class="form-group">
+    <label for="invoice_number">
+      Invoice number
+    </label>
+
+    <input type="text" id="invoice_number" name="invoice_number" class="form-control" value="<%= @invoice.invoice_number %>">
+  </div>
+
+  <div class="form-group">
+    <label for="creation_date">
+      Creation date
+    </label>
+
+    <input type="text" id="creation_date" name="creation_date" class="form-control" value="<%= @invoice.creation_date %>">
+  </div>
+
+  <div class="form-group">
+    <label for="work_order_id">
+      Work order
+    </label>
+
+    <input type="text" id="work_order_id" name="work_order_id" class="form-control" value="<%= @invoice.work_order_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update invoice
+  </button>
+</form>
+
+<hr>
+
+<a href="/invoices">
+  Go back
+</a>

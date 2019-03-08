@@ -1,0 +1,58 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Expense #<%= @expense.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/expenses" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/expenses/<%= @expense.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit expense
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_expense/<%= @expense.id %>" class="btn btn-block btn-outline-secondary">
+          Delete expense
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Amount
+      </dt>
+      <dd>
+        <%= @expense.amount %>
+      </dd>
+
+      <dt>
+        Subcategory
+      </dt>
+      <dd>
+        <%= @expense.subcategory_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@expense.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@expense.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

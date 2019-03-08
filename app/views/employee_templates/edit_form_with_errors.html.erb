@@ -1,0 +1,50 @@
+<% if @employee.errors.any? %>
+  <% @employee.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit employee #<%= @employee.id %>
+</h1>
+
+<hr>
+
+<form action="/update_employee/<%= @employee.id %>" method="post">
+
+  <div class="form-group">
+    <label for="first_name">
+      First name
+    </label>
+
+    <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @employee.first_name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="last_name">
+      Last name
+    </label>
+
+    <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @employee.last_name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="percentage_fee">
+      Percentage fee
+    </label>
+
+    <input type="text" id="percentage_fee" name="percentage_fee" class="form-control" value="<%= @employee.percentage_fee %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update employee
+  </button>
+</form>
+
+<hr>
+
+<a href="/employees">
+  Go back
+</a>

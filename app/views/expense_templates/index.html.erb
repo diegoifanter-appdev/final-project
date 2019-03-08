@@ -1,0 +1,74 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All expenses
+    </h1>
+
+    <a href="/expenses/new" class="btn btn-block btn-outline-secondary">
+      Add a new expense
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Subcategory
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @expenses.each do |expense| %>
+      <tr>
+        <td>
+          <%= expense.id %>
+        </td>
+
+        <td>
+          <%= expense.amount %>
+        </td>
+
+        <td>
+          <%= expense.subcategory_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(expense.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(expense.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/expenses/<%= expense.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Employee #<%= @employee.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/employees" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/employees/<%= @employee.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit employee
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_employee/<%= @employee.id %>" class="btn btn-block btn-outline-secondary">
+          Delete employee
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <dd>
+        <%= @employee.first_name %>
+      </dd>
+
+      <dt>
+        Last name
+      </dt>
+      <dd>
+        <%= @employee.last_name %>
+      </dd>
+
+      <dt>
+        Percentage fee
+      </dt>
+      <dd>
+        <%= @employee.percentage_fee %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@employee.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@employee.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
